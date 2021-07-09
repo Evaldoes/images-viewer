@@ -1,0 +1,35 @@
+
+
+.toggle-menu{
+    cursor: pointer;
+    font-size: 27px;
+    color: #6c89b2 !important;
+}
+
+
+::ng-deep{
+    nb-layout-header{
+        background-color: #f2f5ff !important;
+        nav.fixed{
+            justify-content: space-between !important;
+        }
+    }
+
+    // nb-layout-column{
+    //     padding: 0 !important;
+    // }
+    
+    
+    
+    nb-sidebar{
+        background-color: #f2f5ff !important;
+    }
+
+    .cdk-overlay-dark-backdrop {
+        background: #6c89b2 !important;
+    }
+
+    .cdk-overlay-pane {
+        max-width: none !important;
+    }
+}

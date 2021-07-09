@@ -1,0 +1,119 @@
+
+
+::ng-deep {
+    mat-dialog-container {
+        padding: 0 !important;
+    }
+}
+
+.shell-modal-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px;
+    height: 100%;
+}
+
+.shell-modal-content {
+    display: flex;
+}
+
+.shell-modal-message {
+    display: flex;
+    align-items: center;
+    span {
+        font-weight: 500;
+        font-size: 20px;
+        color: #777777;
+    }
+}
+
+.shell-modal-close {
+    // padding-top: 8px;
+    // margin-right: 8px;
+    display: flex;
+    justify-content: flex-end;
+    mat-icon {
+        margin: 0 !important;
+        cursor: pointer;
+    }
+}
+
+.shell-modal-actions {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.rounded-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 35px;
+    mat-icon {
+        margin: 0 !important;
+        font-size: 60px;
+        width: 60px;
+        height: 60px;
+    }
+}
+
+.invert-icon {
+    transform: rotate(180deg);
+}
+
+.btn-default {
+    border-radius: 0;
+    color: #fff;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.btn-disabled {
+    background-color: #eeeeee !important;
+}
+
+.btn-tpv {
+    background-color: #0061a8 !important;
+}
+
+.btn-cancel {
+    background: #eeeeee;
+    border: 1px solid #777777;
+    color: #777777 !important;
+}
+
+.success {
+    color: #0edb30 !important;
+}
+
+.info {
+    color: #0061a8 !important;
+}
+
+.warning {
+    color: #FF9B06 !important;
+}
+
+.danger {
+    color: #e94355 !important;
+}
+
+.btn-success {
+    background: #0edb30 !important;
+}
+
+.btn-info {
+    background: #0061a8 !important;
+}
+
+.btn-warning {
+    background: #FF9B06 !important;
+}
+
+.btn-danger {
+    background: #e94355 !important;
+}

@@ -1,0 +1,28 @@
+<nb-layout >
+
+  <nb-layout-header fixed>
+    <!-- <button class="" nbButton status="info" size="tiny" (click)="toggleCompact()"> -->
+    <!-- <div class="d-flex align-items-center"> -->
+      <!-- <nb-icon class="toggle-menu" status="'basic'" (click)="toggleCompact()" icon="menu"></nb-icon> -->
+      <img width="215" src="../assets/DI.png" alt="">
+    <!-- </div> -->
+
+    <button (click)=" fullScreen()" style="background-color: #6c89b2 !important; border-color: #6c89b2 !important;"  size="small" nbButton status="success">Apresentar<nb-icon icon="play-circle"></nb-icon></button>
+    <!-- </button> -->
+  </nb-layout-header>
+
+
+  <!-- <nb-sidebar tag="left"></nb-sidebar> -->
+  <!-- <nb-sidebar [state]="'compacted'" left tag="left">
+    <nb-menu [items]="items">
+    </nb-menu>
+  </nb-sidebar> -->
+
+  <nb-layout-column>
+    <router-outlet></router-outlet>
+  </nb-layout-column>
+  <!-- 
+  <nb-layout-footer fixed>
+  </nb-layout-footer> -->
+
+</nb-layout>
