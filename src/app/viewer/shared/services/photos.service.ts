@@ -1,27 +1,29 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { catchError, map } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
+import { Photo } from '../models/photos';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PhotosService {
-  private api = environment.API_URL;
+  private api = `${environment.API_URL}/wedding/photos`;
 
   constructor(private http: HttpClient) {}
 
-  getAllPhotos():Observable<any>{
+  getAllPhotos():Observable<Photo[]>{
     return this.http
       .get(this.api)
-      .pipe(catchError(this.handleError), map(this.jsonDataToAny));
+      .pipe(catchError(this.handleError), map(this.jsonDataToPhotos));
   }
 
 
-  deletePhoto(){
+  deletePhoto(id: number){
+    var url = `${this.api}/${id}`
     return this.http
-      .delete(this.api,{})
+      .delete(url,{})
       .pipe(catchError(this.handleError), map(this.jsonDataToAny));
   }
 
@@ -31,6 +33,12 @@ export class PhotosService {
 
   private handleError(error: any): Observable<any> {
     return throwError(error);
+  }
+
+   private jsonDataToPhotos(jsonData: any): Photo[]{
+    const photos: Photo[] = [];
+    jsonData.forEach(element => photos.push(element as Photo));
+    return photos;
   }
 
 }

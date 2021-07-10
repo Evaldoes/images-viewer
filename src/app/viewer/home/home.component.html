@@ -1,89 +1,11 @@
 <div class="galery">
-    <div class="gridItem">
+
+    <img height="210" *ngIf="photos.length == 0" src="../../../assets/void.svg" alt="">
+    <div *ngFor="let photo of photos" class="gridItem" style="background-image: url('{{photo.url}}');">
         <div class="photoActions">
-            <nb-icon status="'basic'" icon="download-outline"></nb-icon>
-            <nb-icon status="'basic'" icon="trash-2-outline"></nb-icon>
+            <nb-icon (click)="deletePhoto(photo.url)" status="'basic'" icon="download-outline"></nb-icon>
+            <nb-icon (click)="deletePhoto(photo.id)" status="'basic'" icon="trash-2-outline"></nb-icon>
             <nb-icon status="'basic'" icon="eye"></nb-icon>
         </div>
     </div>
-
-    <div class="gridItem">
-      <div class="photoActions">
-          <nb-icon status="'basic'" icon="download-outline"></nb-icon>
-          <nb-icon status="'basic'" icon="trash-2-outline"></nb-icon>
-          <nb-icon status="'basic'" icon="eye"></nb-icon>
-      </div>
-  </div>
-
-  <div class="gridItem">
-    <div class="photoActions">
-        <nb-icon status="'basic'" icon="download-outline"></nb-icon>
-        <nb-icon status="'basic'" icon="trash-2-outline"></nb-icon>
-        <nb-icon status="'basic'" icon="eye"></nb-icon>
-    </div>
-</div>
-
-<div class="gridItem">
-  <div class="photoActions">
-      <nb-icon status="'basic'" icon="download-outline"></nb-icon>
-      <nb-icon status="'basic'" icon="trash-2-outline"></nb-icon>
-      <nb-icon status="'basic'" icon="eye"></nb-icon>
-  </div>
-</div>
-<div class="gridItem">
-  <div class="photoActions">
-      <nb-icon status="'basic'" icon="download-outline"></nb-icon>
-      <nb-icon status="'basic'" icon="trash-2-outline"></nb-icon>
-      <nb-icon status="'basic'" icon="eye"></nb-icon>
-  </div>
-</div>
-<div class="gridItem">
-  <div class="photoActions">
-      <nb-icon status="'basic'" icon="download-outline"></nb-icon>
-      <nb-icon status="'basic'" icon="trash-2-outline"></nb-icon>
-      <nb-icon status="'basic'" icon="eye"></nb-icon>
-  </div>
-</div>
-<div class="gridItem">
-  <div class="photoActions">
-      <nb-icon status="'basic'" icon="download-outline"></nb-icon>
-      <nb-icon status="'basic'" icon="trash-2-outline"></nb-icon>
-      <nb-icon status="'basic'" icon="eye"></nb-icon>
-  </div>
-</div>
-<div class="gridItem">
-  <div class="photoActions">
-      <nb-icon status="'basic'" icon="download-outline"></nb-icon>
-      <nb-icon status="'basic'" icon="trash-2-outline"></nb-icon>
-      <nb-icon status="'basic'" icon="eye"></nb-icon>
-  </div>
-</div>
-<div class="gridItem">
-  <div class="photoActions">
-      <nb-icon status="'basic'" icon="download-outline"></nb-icon>
-      <nb-icon status="'basic'" icon="trash-2-outline"></nb-icon>
-      <nb-icon status="'basic'" icon="eye"></nb-icon>
-  </div>
-</div>
-<div class="gridItem">
-  <div class="photoActions">
-      <nb-icon status="'basic'" icon="download-outline"></nb-icon>
-      <nb-icon status="'basic'" icon="trash-2-outline"></nb-icon>
-      <nb-icon status="'basic'" icon="eye"></nb-icon>
-  </div>
-</div>
-<div class="gridItem">
-  <div class="photoActions">
-      <nb-icon status="'basic'" icon="download-outline"></nb-icon>
-      <nb-icon status="'basic'" icon="trash-2-outline"></nb-icon>
-      <nb-icon status="'basic'" icon="eye"></nb-icon>
-  </div>
-</div>
-<div class="gridItem">
-  <div class="photoActions">
-      <nb-icon status="'basic'" icon="download-outline"></nb-icon>
-      <nb-icon status="'basic'" icon="trash-2-outline"></nb-icon>
-      <nb-icon status="'basic'" icon="eye"></nb-icon>
-  </div>
-</div>
 </div>

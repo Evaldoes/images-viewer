@@ -11,10 +11,10 @@
   margin-bottom: 30px;
   background-color: #fdfdfd;
   width: calc((100% / 4) - 20px);
-  min-height: 210px;
-  background-image: url("http://santamonica.rec.br/wp-content/uploads/2018/03/como-escolher-salao-de-festas-casamento.jpg");
+  min-height: 300px;
+  // background-image: url("http://santamonica.rec.br/wp-content/uploads/2018/03/como-escolher-salao-de-festas-casamento.jpg");
   background-position: center;
-  background-size: 100%;
+  background-size:contain;
   background-repeat: no-repeat;
 }
 
@@ -79,10 +79,10 @@
 
 @keyframes expansive {
   from {
-    background-size: 100%;
+    background-size: 75%;
   }
   to {
-    background-size: 110%;
+    background-size: 80%;
   }
 }
 
@@ -96,12 +96,54 @@
 }
 
 
-// @keyframes displayIcon {
-//     from {
-//         display: none;
-//     }
-//     to {
-//    display: block;
 
-//     }
-//   }
+
+@media (max-width: 575.98px) { 
+
+ }
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) { 
+
+ }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) { 
+
+ }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+
+ }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1360px)  and (max-width: 1899px) { 
+  .gridItem{
+    border: 1px solid #efefef;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    background-color: #fdfdfd;
+    width: calc((100% / 5) - 20px);
+    min-height: 300px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+ }
+}
+
+
+ @media (min-width: 1900px) { 
+  .gridItem{
+    border: 1px solid #efefef;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    background-color: #fdfdfd;
+    width: calc((100% / 6) - 20px);
+    min-height: 300px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+ }
+
+}

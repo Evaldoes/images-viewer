@@ -8,6 +8,7 @@ import { NbButtonModule, NbCardModule, NbCheckboxModule, NbIconModule, NbLayoutM
 import { FullScreenModalComponent } from './shared/components/full-screen-modal/full-screen-modal.component';
 import {  MatDialogModule} from '@angular/material/dialog';
 import {  MatIconModule} from '@angular/material/icon';
+import { PhotosService } from './shared/services/photos.service';
 
 
 @NgModule({
@@ -23,6 +24,9 @@ import {  MatIconModule} from '@angular/material/icon';
     NbCheckboxModule,
     MatDialogModule,
     MatIconModule
+  ],
+  providers:[
+    // PhotosService
   ]
 })
 export class ViewerModule { }
