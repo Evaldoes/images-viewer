@@ -17,7 +17,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   oldPhotos = [];
   queuePhotos = [];
-  currentIndex: number = 0;
+  currentIndex: number = -1;
   projector;
 
   splash = {
@@ -45,17 +45,28 @@ export class AppComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.socketService.setupSocketConnection();
-    setInterval(() => {
 
+    this.socketService.socket.on('photo', (data) => {
+      console.log('Chegou nova photo');
       this.queuePhotos.push(
         {
-          url: `https://picsum.photos/1024/76${this.randomInteger(0, 9)}`,
-          subject: 'Angular 7',
-          code: '123'
+          url: data.file.url,
+          subject: data.family.subject,
+          code: data.family.code
         },
-      )
-      console.log('actual queue ==> ', this.queuePhotos);
-    }, 10000)
+      );
+    });
+    // setInterval(() => {
+    //
+    //   this.queuePhotos.push(
+    //     {
+    //       url: `https://picsum.photos/1024/76${this.randomInteger(0, 9)}`,
+    //       subject: 'Angular 7',
+    //       code: '123'
+    //     },
+    //   )
+    //   console.log('actual queue ==> ', this.queuePhotos);
+    // }, 10000)
   }
 
   randomInteger(min, max) {
@@ -84,10 +95,8 @@ export class AppComponent implements OnInit, OnDestroy {
     );
 
     this.projector = setInterval(() => {
-      console.log('test');
-
       if (this.dialogRef && this.dialogRef.componentInstance) {
-        if (this.queuePhotos.length != 0) {
+        if (this.queuePhotos.length !== 0) {
           this.dialogRef.componentInstance.data = {
             photos: [
               this.queuePhotos[0],
@@ -103,16 +112,22 @@ export class AppComponent implements OnInit, OnDestroy {
           console.log('fotos antigas atualizadas ==> ', this.oldPhotos);
         } else {
 
-          if (this.oldPhotos.length != 0) {
-            this.currentIndex = ((this.currentIndex + 1) % (this.oldPhotos.length == 0 ? this.oldPhotos.length + 1 : this.oldPhotos.length));
+          if (this.oldPhotos.length !== 0) {
+            this.currentIndex = ((this.currentIndex + 1) % (this.oldPhotos.length));
             console.log(this.currentIndex, this.oldPhotos.length);
             console.log('mostrando fotos antigas ==>');
-            this.dialogRef.componentInstance.data = {
-              photos: [
-                this.oldPhotos[this.currentIndex],
-                this.oldPhotos[((this.currentIndex + 1) % (this.oldPhotos.length == 0 ? this.oldPhotos.length + 1 : this.oldPhotos.length))],
-              ]
-            };
+            if (!isNaN(this.currentIndex)) {
+              this.dialogRef.componentInstance.data = {
+                photos: [
+                  this.oldPhotos[this.currentIndex],
+                  this.oldPhotos[((this.currentIndex + 1) % (this.oldPhotos.length))],
+                ]
+              };
+            } else {
+              this.dialogRef.componentInstance.data = {
+                ...this.splash
+              };
+            }
           } else {
             this.dialogRef.componentInstance.data = {
               ...this.splash
