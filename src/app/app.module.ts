@@ -1,3 +1,4 @@
+import { SocketioService } from './viewer/shared/services/socketio.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -25,9 +26,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     NbMenuModule.forRoot(),
     MatDialogModule
 
-    
+
   ],
-  providers: [],
+  providers: [SocketioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

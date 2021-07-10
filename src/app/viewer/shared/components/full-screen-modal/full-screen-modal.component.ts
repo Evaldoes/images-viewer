@@ -9,20 +9,14 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialo
 })
 export class FullScreenModalComponent implements OnInit {
 
-  
+  public allPhotos = [];
 
 
-  public modalIcons = {
-    success: 'check_circle',
-    info: 'error',
-    warning: 'warning',
-    danger: 'error'
-  }
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data,
     private shellModalRef: MatDialogRef<FullScreenModalComponent>
-  ) { 
+  ) {
     // data.type = 'info'
   }
 
