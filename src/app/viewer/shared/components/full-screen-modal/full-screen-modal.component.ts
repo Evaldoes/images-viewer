@@ -50,7 +50,7 @@ export class FullScreenModalComponent implements OnInit {
   }
 
   public close(value) {
-    this.shellModalRef.close(value);
+    this.shellModalRef.close(true);
   }
 
   public sendResult(result) {
