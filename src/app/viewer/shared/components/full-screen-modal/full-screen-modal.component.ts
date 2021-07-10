@@ -1,5 +1,5 @@
 import { Component, HostListener, Inject, OnInit } from '@angular/core';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 
 @Component({
@@ -21,6 +21,28 @@ export class FullScreenModalComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    // let elem = document.documentElement;
+    // let methodToBeInvoked = elem.requestFullscreen ||
+    //   elem?.webkitRequestFullScreen || elem['mozRequestFullscreen']
+    //   ||
+    //   elem['msRequestFullscreen'];
+    // if (methodToBeInvoked) methodToBeInvoked.call(elem);
+
+    //  if(this.data == undefined || this.data == null)
+    //     this.data = {
+    //       photos: [
+    //       {
+    //         url: `../../../../../../../assets/splash.png`,
+    //         subject: '',
+    //         code: ''
+    //       },
+    //       {
+    //         url: null,
+    //         subject: null,
+    //         code: null
+    //       }
+    //     ]}
   }
 
   public cancel() {

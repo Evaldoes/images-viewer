@@ -4,9 +4,20 @@ flex-direction: column-reverse;
 display: flex;
 align-items: flex-end;">
 
-    <img src="{{data.photos[0].url}}" alt="">
-  <div style="width: max-content;
-  position: absolute;">
-    <img id="next" width="150" src="{{data.photos[1].url}}" alt="">
+  <img src="{{data?.photos[0].url}}" alt="">
+  <!-- <img *ngIf="data.photos[1] != null"  src="{{data?.photos[0].url}}" alt=""> -->
+  <div style="min-width: 50%;
+    position: absolute;
+    display: flex;
+    min-height: 100px;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;">
+    <span *ngIf="data?.photos[0].subject != null" class="span-name">{{data?.photos[0].subject}}</span>
+    <div style="width: max-content;
+      ">
+      <img *ngIf="data?.photos[1] != undefined ||(data?.photos[1] && data?.photos[1].url != null)" id="next" width="150" src="{{data?.photos[1]?.url}}" alt="">
+    </div>
   </div>
+
 </div>
